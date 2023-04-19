@@ -1,0 +1,53 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 252d51e47ac4863459c692e45daa06f7, type: 3}
+  m_Name: LevelPoolList
+  m_EditorClassIdentifier: 
+  list:
+  - prefab: {fileID: 7748744072146564918, guid: 55968332610e3a74a9776c8aa184dec6, type: 3}
+    count: 4
+  - prefab: {fileID: 7776850209470405518, guid: 1afdcbf6d7337e2409b82614c2a91519, type: 3}
+    count: 2
+  - prefab: {fileID: 7979869594562532301, guid: 4ea5caa13e7d552458f6f3c3cc794dd7, type: 3}
+    count: 10
+  - prefab: {fileID: 7748744072146564918, guid: 4c7d25d3a3fa74d4f80b2380d939065a, type: 3}
+    count: 1
+  - prefab: {fileID: 7748744072146564918, guid: 85040aa83d9a0c840a3e5d3695449e22, type: 3}
+    count: 2
+  - prefab: {fileID: 7748744072146564918, guid: 33ccd2ee5e34102488d9cf0b62fb2c68, type: 3}
+    count: 1
+  - prefab: {fileID: 7748744072146564918, guid: 1492d666b27d6d241af8f3393b83510f, type: 3}
+    count: 1
+  - prefab: {fileID: 7748744072146564918, guid: 3893bf933dab5514eb63222b720fed0e, type: 3}
+    count: 1
+  - prefab: {fileID: 7748744072146564918, guid: ce1f59507a3acf44794e1f700e4da6b3, type: 3}
+    count: 2
+  - prefab: {fileID: 7748744072146564918, guid: 7c6f967b82f318945a3c627e21b2a4f7, type: 3}
+    count: 2
+  - prefab: {fileID: 6379386593341355716, guid: 2e5add7ce37632343b8ece1a44825fce, type: 3}
+    count: 2
+  - prefab: {fileID: 6379386593341355716, guid: 3c0a4f08123e0c641bc8a45bbb16c117, type: 3}
+    count: 2
+  - prefab: {fileID: 6136544290472903543, guid: dbdffea5368379f4abf4eaa3681ed6bb, type: 3}
+    count: 2
+  - prefab: {fileID: 1167546290550092564, guid: 273c1d4734bc5b14d905feb5397f6491, type: 3}
+    count: 2
+  - prefab: {fileID: 7748744072146564918, guid: 81a85fde811ae9e42b65f9343e6b6100, type: 3}
+    count: 2
+  - prefab: {fileID: 7979869594562532301, guid: 04d978c8b6b7f7043ab86be075bff346, type: 3}
+    count: 10
+  - prefab: {fileID: 6379386593341355716, guid: 697e3608962529c4fbc91e935dc3f1eb, type: 3}
+    count: 2
+  - prefab: {fileID: 7748744072146564918, guid: 4146f5fbbe213124cba5654017b9dbf2, type: 3}
+    count: 2
+  - prefab: {fileID: 7748744072146564918, guid: 6bd33db0629c7f74788711dc141bc0dd, type: 3}
+    count: 2
