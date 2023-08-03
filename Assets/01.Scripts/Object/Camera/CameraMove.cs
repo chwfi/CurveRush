@@ -5,8 +5,7 @@ using DG.Tweening;
 
 public class CameraMove : MonoBehaviour
 {
-    [SerializeField]
-    private Transform target;
+    public Transform Target;
 	[SerializeField]
 	private Vector3 offset;
 
@@ -14,13 +13,14 @@ public class CameraMove : MonoBehaviour
 
 	private void Awake()
 	{
+		Target = GameManager.instance.player.transform;
 		canMoveCam = true;
 	}
 
 	private void LateUpdate()
 	{
 		if (canMoveCam)
-			transform.position = new Vector3(0, target.position.y, -10) + offset;
+			transform.position = new Vector3(0, Target.position.y, -10) + offset;
 		else
 			transform.DOShakePosition(0.1f, 0.05f).OnComplete(() =>
 			{

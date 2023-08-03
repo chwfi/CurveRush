@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
 
 public class GameOverUIShowing : MonoBehaviour
 {
@@ -40,7 +41,8 @@ public class GameOverUIShowing : MonoBehaviour
 
 			if (time >= curveTime * 0.5f)
 			{
-				overUI.SetActive(true);
+				if (GameManager.instance.IsTutorial && GameManager.instance.IsTutorialEnd) SceneManager.LoadScene(1);
+				else overUI.SetActive(true);
 				break;
 			}
 

@@ -10,9 +10,9 @@ public class Movement : MonoBehaviour
 {
 	[Header("Movement")]
 	[SerializeField][Tooltip("전진 속도")]
-	private float forwardSpeed;
+	public float forwardSpeed;
     [SerializeField][Tooltip("좌우 이동 최대속도")]
-    private float sidewardMaxSpeed;
+    public float sidewardMaxSpeed;
 	[SerializeField][Tooltip("가속도")]
 	private float acceleration = 1f;
 
@@ -44,10 +44,6 @@ public class Movement : MonoBehaviour
 	public bool move = false;
     public Vector3 curVelocity;
 	public bool isDie = false;
-	public bool crazy = false;
-
-	[SerializeField]
-	StartUI startUI;
 
 	[Header("Event")]
 	public UnityEvent OnDie;
@@ -75,44 +71,6 @@ public class Movement : MonoBehaviour
             SidewardVelocity(sidewardSlider.value);
 			Move();
 		}
-	}
-
-	public void ImmediateOffCrazy()
-    {
-		Time.timeScale = 1f;
-		crazy = false;
-		//trailRenderer.startColor = new Color(1, 1, 1, 1f);
-		//trailRenderer.endColor = new Color(1, 1, 1, 1f);
-		spriteRenderer.color = new Color(1, 1, 1, 1f);
-		processManager.enabled = true;
-	}
-
-	public void OffCrazy()
-	{
-		if (crazy != false)
-			StartCoroutine(SlowTime());
-	}
-
-	IEnumerator SlowTime()
-    {
-		yield return new WaitForSecondsRealtime(0.2f);
-		Time.timeScale -= 0.15f;
-		yield return new WaitForSecondsRealtime(0.2f);
-		Time.timeScale -= 0.15f;
-		yield return new WaitForSecondsRealtime(0.2f);
-		Time.timeScale -= 0.15f;
-		yield return new WaitForSecondsRealtime(0.2f);
-		Time.timeScale -= 0.15f;
-		yield return new WaitForSecondsRealtime(0.2f);
-		Time.timeScale -= 0.15f;
-		crazy = false;
-		trailRenderer.startWidth = 0.388f; 
-		trailRenderer.time = 2f;
-		trailRenderer.startColor = new Color(1, 1, 1, 1f);
-		trailRenderer.endColor = new Color(1, 1, 1, 1f);
-		spriteRenderer.color = new Color(1, 1, 1, 1f);
-		text.DOColor(new Color(1, 1f, 1f, 0.25f), 1f); 	
-		processManager.enabled = true;
 	}
 
 	public void UpdateTrail()
@@ -253,7 +211,15 @@ public class Movement : MonoBehaviour
 
 	private void OnTriggerEnter2D(Collider2D collision)
 	{
-		if (collision.tag != "Checker" && !crazy || collision.tag == "MainCamera")
-			GameManager.instance?.StopGame();
+		if (collision.tag != "Checker")
+        {
+			if (collision.CompareTag("Obstacle") || collision.CompareTag("MainCamera")) GameManager.instance?.StopGame();
+			else if (collision.CompareTag("ObstacleEnd"))
+            {
+				GameManager.instance.IsTutorialEnd = true;
+				GameManager.instance?.StopGame();
+			}
+		}
+			
 	}
 }

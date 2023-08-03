@@ -45,6 +45,9 @@ public class GameManager : MonoBehaviour
 	public UnityEvent OnInitialize;
 	public UnityEvent OnRespawn;
 
+	public bool IsTutorial;
+	public bool IsTutorialEnd;
+
 	private void Awake()
 	{
 		Application.targetFrameRate = 60;
@@ -66,14 +69,17 @@ public class GameManager : MonoBehaviour
 
 	private void Start()
 	{
-		InitializeGame();
+		if (!IsTutorial) InitializeGame();
 		//bestScore = PlayerPrefs.GetInt("BestScore", 0);
 	}
 
     public void StartGame()
 	{
-		scoreManager.SetTrue();
-		soundManager.StartBackgroundSong();
+		if (!IsTutorial)
+		{
+			scoreManager.SetTrue();
+			soundManager.StartBackgroundSong();
+		}
 		respawnCount = 0;
 		startUI.DisableTouchUI();
 		informBestScore.gameObject.SetActive(false);
@@ -94,10 +100,9 @@ public class GameManager : MonoBehaviour
 		cameraMove.canMoveCam = false;
 		player?.Die();
 		soundManager.PlayExplosion();
-		player.ImmediateOffCrazy();
 		scoreManager.scoreText.DOFade(0, 2f);
 		gameoverScoreText.text = score.ToString();
-		if (respawnCount < 1 && score > 15)
+		if (respawnCount < 1 && score > 15 && !IsTutorial)
         {
 			circleTimer.gameObject.SetActive(true);
 			restartButton.SetActive(false);
@@ -106,7 +111,7 @@ public class GameManager : MonoBehaviour
 		}
         else
         {
-			circleTimer.gameObject.SetActive(false);
+			if (!IsTutorial) circleTimer.gameObject.SetActive(false);
 			restartButton.SetActive(true);
 			homeButton.SetActive(true);
 		}

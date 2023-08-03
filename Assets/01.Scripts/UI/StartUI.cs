@@ -12,6 +12,10 @@ public class StartUI : MonoBehaviour
     [SerializeField]
     private Image lowerUI;
     [SerializeField]
+    private GameObject RightObj;
+    [SerializeField]
+    private GameObject LeftObj;
+    [SerializeField]
     private GameObject tts;
     [SerializeField]
     private GameObject startButton;
@@ -32,12 +36,15 @@ public class StartUI : MonoBehaviour
         startButton.SetActive(false);
         upperUI.rectTransform.DOAnchorPos(new Vector2(0, 1000f), 0.5f);
         lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -650f), 0.5f);
+        RightObj.transform.DOMoveX(-10, 0.5f);
+        LeftObj.transform.DOMoveX(10, 0.5f);
         touchUI.gameObject.SetActive(true);
         Invoke("RePost", 0.3f);      
     }
 
     public void RePost()
     {
+        RightObj.gameObject.SetActive(false);
         upperUI.gameObject.SetActive(false);
         lowerUI.gameObject.SetActive(false);          
     }
@@ -54,8 +61,11 @@ public class StartUI : MonoBehaviour
         startButton.SetActive(true);
         upperUI.gameObject.SetActive(true);
         lowerUI.gameObject.SetActive(true);
-        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 0), 0.5f);
-        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -100), 0.5f);       
+        RightObj.gameObject.SetActive(true);
+        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 45), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -100), 0.5f);
+        RightObj.transform.DOMoveX(-2.5f, 0.5f);
+        LeftObj.transform.DOMoveX(3.45f, 0.5f);
     }
 
     public void SetTouchUI()
