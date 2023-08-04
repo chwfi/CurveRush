@@ -37,6 +37,8 @@ public class Movement : MonoBehaviour
 	private TextMeshProUGUI text;
 	[SerializeField]
 	private PostProcessManager processManager;
+	[SerializeField]
+	private Gradient[] _keys;
 
 	[SerializeField]
 	private CheckRisky checkRisky;
@@ -77,6 +79,16 @@ public class Movement : MonoBehaviour
 	{
 		trailRenderer.startWidth = 0.388f;
 		trailRenderer.time = 2f;
+	}
+
+	public void SetTrailColor()
+    {
+		trailRenderer.colorGradient = _keys[1];	
+    }
+
+	public void SetTrailDefault()
+    {
+		trailRenderer.colorGradient = _keys[0];
 	}
 
     public void SidewardVelocity(float input)

@@ -25,16 +25,6 @@ public class Score : MonoBehaviour
 		}
 	}
 
-    private void Start()
-    {
-		Alpha();
-	}
-
-	public void Alpha()
-    {
-		scoreText.color = new Color(0.6f, 0.6f, 0.6f, 0);
-	}
-
     public void SetTrue()
 	{
 		scoreText.DOFade(0.25f, 4f);

@@ -47,3 +47,6 @@ TagManager:
   - name: NoP
     uniqueID: 2374483971
     locked: 0
+  - name: Trail
+    uniqueID: 3188174137
+    locked: 0

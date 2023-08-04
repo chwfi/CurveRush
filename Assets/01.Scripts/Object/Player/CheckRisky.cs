@@ -28,6 +28,11 @@ public class CheckRisky : MonoBehaviour
 
     string[] scoreTexts = { "+1", "+2" };
 
+    private void Start()
+    {
+        soundManager = FindObjectOfType<SoundManager>();
+    }
+
     private void Update()
     {
         transform.position = player.transform.position;

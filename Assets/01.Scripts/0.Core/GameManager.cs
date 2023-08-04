@@ -65,6 +65,8 @@ public class GameManager : MonoBehaviour
 		{
 			bestScore = PlayerPrefs.GetInt(HIGH_SCORE_KEY);
 		}
+
+		soundManager = FindObjectOfType<SoundManager>();
 	}
 
 	private void Start()
@@ -78,7 +80,6 @@ public class GameManager : MonoBehaviour
 		if (!IsTutorial)
 		{
 			scoreManager.SetTrue();
-			soundManager.StartBackgroundSong();
 		}
 		respawnCount = 0;
 		startUI.DisableTouchUI();
@@ -137,8 +138,6 @@ public class GameManager : MonoBehaviour
 
 	public void InitializeGame()
 	{			
-		lobbySound.Play();
-		soundManager.StopBackgroundSong();
 		player?.Initialize();
 		soundManager.count = 0;
 		respawnCount = 0;

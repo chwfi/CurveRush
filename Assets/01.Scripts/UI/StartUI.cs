@@ -21,6 +21,8 @@ public class StartUI : MonoBehaviour
     private GameObject startButton;
     [SerializeField]
     private GameObject scoreText;
+    [SerializeField]
+    private Image shop;
 
     [SerializeField]
     private GameObject touchUI;
@@ -34,8 +36,8 @@ public class StartUI : MonoBehaviour
     {
         tts.SetActive(false);
         startButton.SetActive(false);
-        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 1000f), 0.5f);
-        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -650f), 0.5f);
+        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 1800), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -1000f), 0.5f);
         RightObj.transform.DOMoveX(-10, 0.5f);
         LeftObj.transform.DOMoveX(10, 0.5f);
         touchUI.gameObject.SetActive(true);
@@ -71,5 +73,23 @@ public class StartUI : MonoBehaviour
     public void SetTouchUI()
     {
         touchUI.SetActive(true);
+    }
+
+    public void OpenShop()
+    {
+        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 1800), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -1000f), 0.5f);
+        RightObj.transform.DOMoveX(-10, 0.5f);
+        LeftObj.transform.DOMoveX(10, 0.5f);
+        shop.rectTransform.DOAnchorPos(new Vector2(0, 50f), 0.5f);
+    }
+
+    public void OffShop()
+    {
+        upperUI.rectTransform.DOAnchorPos(new Vector2(0, 45), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -100), 0.5f);
+        RightObj.transform.DOMoveX(-2.5f, 0.5f);
+        LeftObj.transform.DOMoveX(3.45f, 0.5f);
+        shop.rectTransform.DOAnchorPos(new Vector2(0, -2200f), 0.5f);
     }
 }

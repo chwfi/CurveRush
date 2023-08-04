@@ -157,7 +157,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxWeight: 2125
-  weight: 1000
+  weight: 1500
   lenght: 20
   boxes: []
   posXRandomness: 0

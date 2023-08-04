@@ -25,16 +25,6 @@ public class ButtonManager : MonoBehaviour
         muteMusic.gameObject.SetActive(true);
     }
 
-    public void OnMuteLobby()
-    {
-        lobby.volume = 0;
-    }
-
-    public void OffMuteLobby()
-    {
-        lobby.volume = 0.6f;
-    }
-
     public void OffMuteMusic()
     {
         soundManager.background = _background;

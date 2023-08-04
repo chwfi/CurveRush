@@ -4,11 +4,33 @@ using UnityEngine;
 
 public class SoundManager : MonoBehaviour
 {
+    public static SoundManager Instance;
+
     [SerializeField]
     private AudioSource audioSource;
 
     public AudioClip background;
     public AudioClip[] soundEffects;
+
+    private void Awake()
+    {
+        if (Instance == null)
+        {
+            Instance = this;
+            DontDestroyOnLoad(Instance);
+        }
+
+        var obj = FindObjectsOfType<SoundManager>();
+        if (obj.Length == 1)
+        {
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+        StartBackgroundSong();
+    }
 
     public void StartBackgroundSong()
     {

@@ -23,14 +23,13 @@ public class TutorialManager : MonoBehaviour
         _player.Active();
         _player.sidewardMaxSpeed = 0;
         _player.forwardSpeed = 0;
-
-        StartCoroutine(SetScore());
     }
 
     private void Update()
     {
         if (Input.GetMouseButtonDown(0) && onStart)
         {
+            StartCoroutine(SetScore());
             GameManager.instance.InitializeGame();
             GameManager.instance.StartGame();
             _player.sidewardMaxSpeed = 3f;
@@ -53,12 +52,17 @@ public class TutorialManager : MonoBehaviour
 
     private IEnumerator SetScore()
     {
-        yield return new WaitForSeconds(8.5f);
+        yield return new WaitForSeconds(7.7f);
         _score.SetTrue();
     }
 
     public void ReloadScene()
     {
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
+    }
+
+    public void ToHome()
+    {
+        SceneManager.LoadScene(1);
     }
 }
