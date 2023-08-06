@@ -9,7 +9,7 @@ public class ShopPanel : MonoBehaviour
 
     [SerializeField] private GameObject[] _lockedImages;
 
-    public float _bestScore;
+    public int _bestScore;
 
     public SpriteRenderer _rend;
     public Sprite[] Skins; 

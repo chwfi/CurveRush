@@ -16,30 +16,34 @@ public class ButtonManager : MonoBehaviour
     [SerializeField]
     private AudioClip[] _soundEffects;
 
-    [SerializeField]
     private AudioSource lobby;
+
+    private void Start()
+    {
+        lobby = FindAnyObjectByType<AudioSource>();
+    }
 
     public void OnMuteMusic()
     {
-        soundManager.background = null;
+        soundManager.backgroundAudio.volume = 0;
         muteMusic.gameObject.SetActive(true);
     }
 
     public void OffMuteMusic()
     {
-        soundManager.background = _background;
+        soundManager.backgroundAudio.volume = 0.7f;
         muteMusic.gameObject.SetActive(false);
     }
 
     public void OnMuteEffect()
     {
-        soundManager.soundEffects = null;
+        soundManager.effectAudio.volume = 0;
         muteEffect.gameObject.SetActive(true);
     }
 
     public void OffMuteEffect()
     {
-        soundManager.soundEffects = _soundEffects;
+        soundManager.effectAudio.volume = 1;
         muteEffect.gameObject.SetActive(false);
     }
 }

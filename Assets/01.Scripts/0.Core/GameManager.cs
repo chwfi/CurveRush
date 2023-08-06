@@ -37,7 +37,7 @@ public class GameManager : MonoBehaviour
 	[Header("Score")]
 	public int score;
 	public int bestScore;
-	public string HIGH_SCORE_KEY = "high_score";
+	public string HIGH_SCORE_KEY = "highScore";
 	public TextMeshProUGUI bestScoreText;
 
 	public UnityEvent OnStart;

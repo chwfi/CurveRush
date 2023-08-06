@@ -65,7 +65,7 @@ public class StartUI : MonoBehaviour
         lowerUI.gameObject.SetActive(true);
         RightObj.gameObject.SetActive(true);
         upperUI.rectTransform.DOAnchorPos(new Vector2(0, 45), 0.5f);
-        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -100), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -50), 0.5f);
         RightObj.transform.DOMoveX(-2.5f, 0.5f);
         LeftObj.transform.DOMoveX(3.45f, 0.5f);
     }
@@ -87,7 +87,7 @@ public class StartUI : MonoBehaviour
     public void OffShop()
     {
         upperUI.rectTransform.DOAnchorPos(new Vector2(0, 45), 0.5f);
-        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -100), 0.5f);
+        lowerUI.rectTransform.DOAnchorPos(new Vector2(0, -50), 0.5f);
         RightObj.transform.DOMoveX(-2.5f, 0.5f);
         LeftObj.transform.DOMoveX(3.45f, 0.5f);
         shop.rectTransform.DOAnchorPos(new Vector2(0, -2200f), 0.5f);
