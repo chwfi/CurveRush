@@ -145,10 +145,9 @@ public class GameManager : MonoBehaviour
 		player?.SetTrigger();
 		player?.ResetTrail();
 		scoreManager?.Initialize();
-		//soundManager?.StopBackgroundSong();
 		informBestScore.gameObject.SetActive(false);
 		gameoverScoreText.color = new Color(1, 1, 1, 1f);
-		scoreManager.scoreText.color = new Color(0.6f, 0.6f, 0.6f, 0f);
+		//scoreManager.scoreText.color = new Color(0.6f, 0.6f, 0.6f, 0f);
 		player.UpdateTrail();
 		startUI?.AbleStartUI();
 		postProcess.SetStart();
@@ -162,8 +161,7 @@ public class GameManager : MonoBehaviour
 		scoreManager?.Initialize();
 		startUI.SetTouchUI();
 		gameoverScoreText.color = new Color(1, 1, 1, 1f);
-		scoreManager.scoreText.color = new Color(0.6f, 0.6f, 0.6f, 0.25f);
-		soundManager?.StopBackgroundSong();
+		//scoreManager.scoreText.color = new Color(0.6f, 0.6f, 0.6f, 0.25f);
 		player?.SetTrigger();
 		player?.ResetTrail();
 		OnInitialize?.Invoke();

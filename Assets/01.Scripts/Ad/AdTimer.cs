@@ -13,7 +13,7 @@ public class AdTimer : MonoBehaviour
         if (canTime)
             adTimer += Time.deltaTime;
 
-        if (adTimer >= 60)
+        if (adTimer >= 90)
         {
             canAd = true;
             canTime = false;
